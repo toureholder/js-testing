@@ -7,7 +7,7 @@
     "start": "http-server -c-1",
     "build": "webpack src/app.js --mode development --watch",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --watch --coverage"
   },
   "author": "Wiz",
   "license": "ISC",
