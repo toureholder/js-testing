@@ -1,9 +1,13 @@
 const { generateText, createElement, validateInput } = require("./util");
+const { fetchData } = require("./http");
 
 const initApp = () => {
-  // Initializes the app, registers the button click listener
+  // Initializes the app, registers the button click listeners
   const newUserButton = document.querySelector("#btnAddUser");
   newUserButton.addEventListener("click", addUser);
+
+  const loadDataButton = document.querySelector("#btnLoadData");
+  loadDataButton.addEventListener("click", printTitle);
 };
 
 const addUser = () => {
@@ -26,6 +30,16 @@ const addUser = () => {
   );
   const element = createElement("li", outputText, "user-item");
   userList.appendChild(element);
+};
+
+const loadTitle = () => {
+  return fetchData().then((response) => response.title);
+};
+
+const printTitle = () => {
+  loadTitle().then((title) => {
+    console.log(title);
+  });
 };
 
 // Start the app!
