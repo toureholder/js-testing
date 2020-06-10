@@ -1,5 +1,5 @@
 const { generateText, createElement, validateInput } = require("./util");
-const { fetchData } = require("./http");
+const { printTitle } = require("./data.service");
 
 const initApp = () => {
   // Initializes the app, registers the button click listeners
@@ -30,16 +30,6 @@ const addUser = () => {
   );
   const element = createElement("li", outputText, "user-item");
   userList.appendChild(element);
-};
-
-const loadTitle = () => {
-  return fetchData().then((response) => response.title);
-};
-
-const printTitle = () => {
-  loadTitle().then((title) => {
-    console.log(title);
-  });
 };
 
 // Start the app!

@@ -1,28 +1,33 @@
 beforeEach(() => {
   // Arrange
   document.body.innerHTML = `
-    <body>
-        <section class="control-panel">
-            <!-- Name input  -->
-            <div class="input-container">
-            <label for="name">Name</label>
-            <input type="text" id="name" />
-            </div>
-            <!-- Age input -->
-            <div class="input-container">
-            <label for="age">Age</label>
-            <input type="number" id="age" />
-            </div>
-            <!-- Button -->
-            <button id="btnAddUser" class="button">Add User</button>
-        </section>
-        <hr />
-        <!-- List -->
-        <section class="user-output">
-            <ul class="user-list"></ul>
-        </section>
-        <script src="../dist/main.js"></script>
-    </body>
+  <body>
+    <h2>Regular synchronous stuff</h2>
+    <section class="control-panel">
+      <!-- Name input  -->
+      <div class="input-container">
+        <label for="name">Name</label>
+        <input type="text" id="name" />
+      </div>
+      <!-- Age input -->
+      <div class="input-container">
+        <label for="age">Age</label>
+        <input type="number" id="age" />
+      </div>
+      <!-- Button -->
+      <button id="btnAddUser" class="button">Add User</button>
+    </section>
+    <!-- List -->
+    <section class="user-output">
+      <ul class="user-list"></ul>
+    </section>
+    <hr />
+    <h2>Async stuff</h2>
+    <section class="async-operations">
+      <button id="btnLoadData" class="button">Load Data</button>
+    </section>
+    <script src="../dist/main.js"></script>
+  </body>
   `;
   require("./app");
 });
