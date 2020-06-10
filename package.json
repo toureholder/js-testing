@@ -7,13 +7,15 @@
     "start": "http-server -c-1",
     "build": "webpack src/app.js --mode development --watch",
     "test": "jest",
-    "test:coverage": "jest --watch --coverage"
+    "test:coverage": "jest --watch --coverage",
+    "test:e2e": "jest --runTestsByPath e2e/app.spec.js --watch --coverage"
   },
   "author": "Wiz",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^26.0.0",
     "jest": "^26.0.1",
+    "puppeteer": "^3.3.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
   }
